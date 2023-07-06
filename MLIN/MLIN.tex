@@ -1,0 +1,23 @@
+\documentclass[convert={outfile=\jobname.svg}]{standalone}
+\usepackage[american]{circuitikz}
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+\begin{circuitikz}
+    \draw[help lines, dashed] grid (6, 6);
+    \draw (0,0) -- ++ (6,0);
+    \draw[
+        draw = none,
+        decoration = {border, segment length=9, amplitude=5, angle = -135},
+        postaction = {decorate, draw}
+    ] (0,0) -- ++ (6.5,0);
+    \draw (0, 2) -- ++ (6, 0);
+    \draw (0, 2)[dashed] -- ++ (30: 1);
+    \draw (6, 2)[dashed] -- ++ (30: 1);
+    \draw (6, 0)[dashed] -- ++ (30: 1);
+    \draw (4, 2)[dashed] -- ++ (30: 1);
+    \draw (2, 2.5)[dashed] -- ++ (30: 1);
+    \draw (4, 2.5)[dashed] -- ++ (30: 1);
+    \draw (2, 2) rectangle (4, 2.5);
+\end{circuitikz}
+\end{document}
